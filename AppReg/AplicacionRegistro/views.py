@@ -3,7 +3,7 @@ from .models import *
 from django.http import HttpResponse
 
 def inicio(request):
-    return render(request,"inicio.html")
+    return render(request,"App1/index.html")
 
 
 def registro(request):
