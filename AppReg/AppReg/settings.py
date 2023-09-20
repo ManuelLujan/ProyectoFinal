@@ -55,7 +55,7 @@ ROOT_URLCONF = 'AppReg.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["C:\\Users\\Nigga\\Desktop\\Final\\AppReg\\AplicacionRegistro\\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

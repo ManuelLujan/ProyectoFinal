@@ -4,11 +4,11 @@ from django.db import models
 
 
 class usuario(models.Model):
-    nombre=models.ChardField(max_length=40)
-    password=models.ChardField(max_length=40)
+    nombre=models.CharField(max_length=40)
+    password=models.CharField(max_length=40)
     email=models.EmailField()
 
 class informacion(models.Model):
-    titulo= models.ChardField(max_length=40)
-    subtitulo= models.ChardField(max_length=40)
-    info= models.ChardField(max_length=200)
+    titulo= models.CharField(max_length=40)
+    subtitulo= models.CharField(max_length=40)
+    info= models.CharField(max_length=200)

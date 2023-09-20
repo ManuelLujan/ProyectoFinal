@@ -1,8 +1,15 @@
 from django.urls import path
-from .views import *
+from AplicacionRegistro import views
+from AplicacionRegistro.views import *
 
 
-urlpatterns = [
-    path('registro/', registro, name="registro"),
+urlpatterns = [ 
+    path('inicio/', views.inicio, name="inicio"),
+    path('',views.registro,name="registro"),
+    path('singup/',views.singup,name="singup"),
+    path('Noticias/',views.Noticias,name="Noticias"),
+    path('Blogs/',views.Blogs,name="Blogs"),
+    path('ParaTi/',views.ParaTi,name="ParaTi"),
 
-]
+
+]   

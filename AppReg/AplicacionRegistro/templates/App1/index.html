@@ -17,24 +17,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blogs</a>
+            <a class="nav-link" href="{% url 'Blogs' %}">Blogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Noticias</a>
+            <a class="nav-link" href="{% url 'Noticias' %}">Noticias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Para ti</a>
+            <a class="nav-link" href="{% url 'ParaTi' %}">Para ti</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </li>
+          
         </ul>
         <form class="d-flex">
           <input class="form-control me-sm-2" type="search" placeholder="Search">
@@ -50,8 +41,9 @@
     </div>
   </nav>
   <form>
+    {% block cambio %}
     <fieldset>
-      <legend>Legend</legend>
+      <legend>Registro</legend>
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -61,7 +53,7 @@
       <div class="form-group">
         <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo con nadie más.</small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
@@ -73,16 +65,18 @@
       <div class="form-group">
         
       </fieldset>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button> <a href="inicio.html"></a>
     </fieldset>
+    {% endblock %}
   </form>
-  
+    {% block cambiotexto %}
   <h2>Example body text</h2>
-<p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+<p>Nullam quis risus eget <a href="https://es.wikipedia.org/wiki/Martín_Palermo">Martin Palermo</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
 <p><small>This line of text is meant to be treated as fine print.</small></p>
 <p>The following is <strong>rendered as bold text</strong>.</p>
 <p>The following is <em>rendered as italicized text</em>.</p>
 <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+    {% endblock %}
  
 
 
