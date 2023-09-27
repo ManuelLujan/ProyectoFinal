@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home
+            <a class="nav-link active" href="{% url 'Home' %}">Home
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
@@ -40,8 +40,8 @@
       </div>
     </div>
   </nav>
+  {% block cambio %}
   <form>
-    {% block cambio %}
     <fieldset>
       <legend>Registro</legend>
       <div class="form-group row">
@@ -67,8 +67,9 @@
       </fieldset>
       <button type="submit" class="btn btn-primary">Submit</button> <a href="inicio.html"></a>
     </fieldset>
-    {% endblock %}
+
   </form>
+  {% endblock %}
     {% block cambiotexto %}
   <h2>Example body text</h2>
 <p>Nullam quis risus eget <a href="https://es.wikipedia.org/wiki/Martín_Palermo">Martin Palermo</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>

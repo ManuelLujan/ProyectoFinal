@@ -4,7 +4,7 @@ from AplicacionRegistro.views import *
 
 
 urlpatterns = [ 
-    path('inicio/', views.inicio, name="inicio"),
+    path('Home/', views.Home, name="Home"),
     path('',views.registro,name="registro"),
     path('singup/',views.singup,name="singup"),
     path('Noticias/',views.Noticias,name="Noticias"),

@@ -1,12 +1,29 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponse
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth import login, logout, authenticate
+from .forms import *
 
 def registro(request):
-    return render(request,"App1/registro.html")
+    if request.method== "POST":
 
-def inicio(request):
-   return render(request, "App1/inicio.html")
+        formRegistro= registroF(request.POST)
+        print(formRegistro)
+
+        if formRegistro.is_valid:
+            infoR= formRegistro.cleaned_data
+            Usuario= usuario(request.POST['nombre'],(request.PSOT['password'], (request.POST[email])))
+            Usuario.save()
+            return render(request, "App1/Home.html")
+
+    
+    
+
+
+
+def Home(request):
+   return render(request, "App1/Home.html")
 
 def Blogs(request):
     return render(request, "App1/Blogs.html")
@@ -19,7 +36,23 @@ def Noticias(request):
 
 
 def singup(requst):
-    pass
+    if request.method == "POST":
+        form= AuthenticationForm(request, data= request.POST)
+
+        if form.is_valid():
+            usuario = form.cleaned_data.get('username')
+            contra = form-cleaned_data.get('password')
+
+            user = authenticate(username=usuario, password=contra)
+
+            if user is not None:
+                login(roquest, user)
+                return render(request, 'App1/Home.html', {"mensaje": f"Bienvenido {usuario}"})
+            else:
+                return render(request, 'App1/singup.html', {"mensaje": f"Error, datos incorrectos"})
+
+        else:
+            return render(request, "App1/singup.html", {"mensaje": f"Error, formulario erroneo"})
 
 def usuario(request):
     pass
