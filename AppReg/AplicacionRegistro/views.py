@@ -3,7 +3,7 @@ from .models import *
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
-from .forms import *
+from .forms import registroF
 
 def registro(request):
     if request.method== "POST":
@@ -15,8 +15,12 @@ def registro(request):
             infoR= formRegistro.cleaned_data
             Usuario= usuario(request.POST['nombre'],(request.PSOT['password'], (request.POST[email])))
             Usuario.save()
-            return render(request, "App1/Home.html")
+            return render(request, "App1/registro.html")
+            
+    else:
+        formRegistro = registroF()
 
+    return render(request, "App1/registro.html", {"formRegistro":formRegistro})
     
     
 
